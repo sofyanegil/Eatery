@@ -1,0 +1,19 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jasmine": true,
+    "codeceptjs/codeconceptjs": true
+  },
+  "extends": ["airbnb-base", "plugin:codeceptjs/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "jasmine": "none"
+  },
+  "rules": {
+    "no-underscore-dangle": "off"
+  },
+  "plugins": ["jasmine", "codeceptjs"]
+}

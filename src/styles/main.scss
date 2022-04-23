@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,500;1,700&display=swap');
+@import '__skip-link.scss';
+@import '__nav.scss';
+@import '__hero.scss';
+@import '__restaurant.scss';
+@import '__food.scss';
+@import '__detail.scss';
+@import '__footer.scss';
+@import '__favorite-button.scss';
+@import '__load-animation.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+.skeleton {
+  user-select: none;
+  background-color: #eeeeee;
+  color: #eeeeee;
+}
+
+@media screen and (max-width: 499px) {
+  main {
+    min-height: min-content;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    min-height: min-content;
+  }
+}
