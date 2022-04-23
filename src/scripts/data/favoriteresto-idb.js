@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import { openDB } from 'idb';
 import CONFIG from '../globals/config';
 
@@ -21,6 +22,7 @@ const FavoriteRestaurantIdb = {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
   async putRestaurant(restaurant) {
+    // eslint-disable-next-line no-prototype-builtins
     if (!restaurant.hasOwnProperty('id')) {
       return;
     }

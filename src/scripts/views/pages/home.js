@@ -1,5 +1,5 @@
 import RestaurantSource from '../../data/RestaurantSource';
-import { CreateMealItemTemplate, CreateRestoItemTemplate, loader, failedLoad, CreateSkeleteonRestoItemTemplate } from '../templates/template-creator';
+import { CreateMealItemTemplate, CreateRestoItemTemplate, CreateSkeleteonRestoItemTemplate } from '../templates/template-creator';
 
 const Home = {
   async render() {

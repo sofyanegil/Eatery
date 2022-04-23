@@ -1,6 +1,8 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/RestaurantSource';
-import { createRestoDetailTemplate, createReviewTemplate, loader, failedLoad } from '../templates/template-creator';
+import {
+  createRestoDetailTemplate, createReviewTemplate, loader, failedLoad,
+} from '../templates/template-creator';
 import LikeButtonPresenter from '../../utils/like-button-presenter';
 import FavoriteRestaurantIdb from '../../data/favoriteresto-idb';
 import addReview from '../../utils/add-review';

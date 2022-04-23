@@ -57,7 +57,7 @@ const CreateRestoItemTemplate = (restaurant) => `
 
 const CreateSkeleteonRestoItemTemplate = (count) => {
   let template = '';
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < count; i += 1) {
     template += `
   <div class="restaurant">
       <img src="/icons/placeholder.png" alt="restaurant" class="lazyload restaurant__image">
