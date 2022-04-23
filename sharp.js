@@ -12,13 +12,13 @@ if (!fs.existsSync(destination)) {
 fs.readdirSync(target).forEach((image) => {
   sharp(`${target}/${image}`)
     .resize(800)
-    .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-large.jpg`));
+    .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-large.webp`));
 
   sharp(`${target}/${image}`)
     .resize(600)
-    .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-medium.jpg`));
+    .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-medium.webp`));
 
   sharp(`${target}/${image}`)
     .resize(480)
-    .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-small.jpg`));
+    .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-small.webp`));
 });
