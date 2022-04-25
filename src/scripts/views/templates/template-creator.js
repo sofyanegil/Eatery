@@ -78,7 +78,7 @@ const CreateSkeleteonRestoItemTemplate = (count) => {
 };
 const CreateMealItemTemplate = (meal) => `
   <div class="food" tabindex="0">
-    <img class="lazyload food__img" data-src="${meal.strMealThumb}" alt="${meal.strMeal} Image" />
+    <img class="lazyload food__img" src="/icons/placeholder.png" data-src="${meal.strMealThumb}" alt="${meal.strMeal} Image" />
     <div class="food__info">
       <p>${meal.strMeal}</p>
     </div>
