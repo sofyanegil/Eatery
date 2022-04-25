@@ -11,14 +11,14 @@ if (!fs.existsSync(destination)) {
 
 fs.readdirSync(target).forEach((image) => {
   sharp(`${target}/${image}`)
-    .resize(800)
+    .resize(1000)
     .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-large.webp`));
 
   sharp(`${target}/${image}`)
-    .resize(600)
+    .resize(700)
     .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-medium.webp`));
 
   sharp(`${target}/${image}`)
-    .resize(480)
+    .resize(500)
     .toFile(path.resolve(__dirname, `${destination}/${image.split('.').slice(0, -1).join('.')}-small.webp`));
 });
