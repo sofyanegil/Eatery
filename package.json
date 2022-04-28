@@ -10,7 +10,8 @@
     "test": "karma start",
     "lint": "eslint src/scripts/**/*.js",
     "lint-fix": "eslint src/scripts/**/*.js --fix",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "start": "npm run build && npm run build-image"
   },
   "keywords": [],
   "author": "sofyanegi <sofyanegil@gmail.com>",
