@@ -38,7 +38,7 @@ registerRoute(
 );
 
 registerRoute(
-  /https:\/\/www\.themealdb\.com\/api\/json\/v1\/1\/filter\.php\?a=Malaysian/i,
+  /https:\/\/www\.themealdb\.com\/api\/json\/v1\/1\/filter\.php\?a=French/i,
   new NetworkFirst({
     cacheName: 'themealdb-cache',
     plugins: [
