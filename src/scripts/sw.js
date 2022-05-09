@@ -9,8 +9,8 @@ import { StaleWhileRevalidate, NetworkFirst } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
 
 setCacheNameDetails({
-  prefix: 'eatery-app',
-  suffix: 'v1',
+  prefix: 'eatery',
+  suffix: 'app',
   precache: 'precache',
   runtime: 'runtime',
 });
@@ -20,46 +20,32 @@ precacheAndRoute(self.__WB_MANIFEST);
 registerRoute(
   ({ request }) => request.mode === 'navigate',
   new NetworkFirst({
-    cacheName: 'pages-cache',
+    cacheName: 'assets-cache',
   })
 );
 
 registerRoute(
-  /^https:\/\/restaurant-api\.dicoding\.dev\/(?:(list|detail))/,
+  ({ url }) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com' || url.origin === 'https://restaurant-api.dicoding.dev' || url.origin === 'https://www.themealdb.com',
   new NetworkFirst({
-    cacheName: 'dicoding-api-cache',
+    cacheName: 'api-cache',
     plugins: [
       new ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 30,
         maxEntries: 100,
       }),
     ],
-  })
-);
-
-registerRoute(
-  /https:\/\/www\.themealdb\.com\/api\/json\/v1\/1\/filter\.php\?a=French/i,
-  new NetworkFirst({
-    cacheName: 'themealdb-cache',
-    plugins: [
-      new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 30,
-        maxEntries: 100,
-      }),
-    ],
-  })
-);
-
-registerRoute(
-  ({ url }) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com',
-  new StaleWhileRevalidate({
-    cacheName: 'google-fonts-cache',
-    plugins: [new ExpirationPlugin({ maxEntries: 50 })],
   })
 );
 
 registerRoute(
   ({ request }) => request.destination === 'style' || request.destination === 'script' || request.destination === 'worker',
+  new StaleWhileRevalidate({
+    cacheName: 'assets-cache',
+  })
+);
+
+registerRoute(
+  new RegExp('/images/.*\\.webp'),
   new StaleWhileRevalidate({
     cacheName: 'assets-cache',
   })
